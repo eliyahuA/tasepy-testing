@@ -3,7 +3,7 @@
 # Test PyPI for tasepy
 --extra-index-url https://test.pypi.org/simple/
 
-ipywidgets==8.1.2
-pandas==2.2.2
-tqdm==4.66.4
 tasepy==0.1.1.dev2
+ipywidgets
+pandas
+tqdm
