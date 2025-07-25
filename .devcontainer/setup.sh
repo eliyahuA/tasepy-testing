@@ -4,11 +4,8 @@ set -e
 echo "Installing tasepy and other Python dependencies..."
 python3 -m pip install -r requirements.txt
 
-echo "clone tasepy"
-git clone https://x-access-token:${GH_TASEPY_READONLY}@github.com/eliyahuA/tasepy.git
-
-echo "Switch to 'to be tested' branch"
-(cd tasepy; git checkout alpha-release)
+echo "clone tasepy release branch"
+git clone -b release https://x-access-token:${GH_TASEPY_READONLY}@github.com/eliyahuA/tasepy.git
 
 echo "Installing development dependencies..."
 python3 -m pip install -r tasepy/dev-requirements.txt
