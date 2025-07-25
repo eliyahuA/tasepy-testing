@@ -15,4 +15,6 @@ pytest tasepy/tests/unit
 
 echo "Run selected integration test"
 export API_KEY=$TASEPY_TESTING_WORKFLOW
+# add variable for future terminal sessions
+echo 'export API_KEY=$TASEPY_TESTING_WORKFLOW' >> ~/.bashrc
 pytest tasepy/tests/integration/client/test_indices_online.py
