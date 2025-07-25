@@ -17,4 +17,5 @@ echo "Run unit tests"
 pytest tasepy/tests/unit
 
 echo "Run selected integration test"
+export API_KEY=$TASEPY_TESTING_WORKFLOW
 pytest tasepy/tests/integration/client/test_indices_online.py
