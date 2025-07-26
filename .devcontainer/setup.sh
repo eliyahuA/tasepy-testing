@@ -2,6 +2,7 @@
 set -e
 
 echo "Installing tasepy and other Python dependencies..."
+python3 -m pip install --extra-index-url ${TASEPY_TESTING_PYPI_INDEX} tasepy==${TASEPY_VERSION}
 python3 -m pip install -r requirements.txt
 
 echo "clone tasepy release branch"
