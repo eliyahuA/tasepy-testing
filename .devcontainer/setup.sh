@@ -2,7 +2,13 @@
 set -e
 
 echo "Installing tasepy and other Python dependencies..."
-python3 -m pip install --extra-index-url ${TASEPY_TESTING_PYPI_INDEX} tasepy==${TASEPY_VERSION}
+
+if [[ -z "${TASEPY_TESTING_PYPI_INDEX}" || "${TASEPY_TESTING_PYPI_INDEX}" == "https://pypi.org/simple/" ]]; then
+    python3 -m pip install tasepy==${TASEPY_VERSION}
+else
+    python3 -m pip install --extra-index-url ${TASEPY_TESTING_PYPI_INDEX} tasepy==${TASEPY_VERSION}
+fi
+
 python3 -m pip install -r requirements.txt
 
 echo "clone tasepy release branch"
